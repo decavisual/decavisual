@@ -166,3 +166,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+const orderSection = document.getElementById("order-section");
+const openOrder = document.getElementById("openOrder");
+
+openOrder.addEventListener("click", () => {
+
+    orderSection.classList.remove("hidden");
+
+    setTimeout(() => {
+        orderSection.classList.remove("opacity-0", "translate-y-10");
+    }, 50);
+
+    orderSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+const templateButtons=document.querySelectorAll(".template-btn");
+
+const preview=document.getElementById("previewVideo");
+
+const source=document.getElementById("previewSource");
+
+const title=document.getElementById("selectedTemplate");
+
+templateButtons.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+templateButtons.forEach(item=>item.classList.remove("active"));
+
+btn.classList.add("active");
+
+source.src=btn.dataset.video;
+
+preview.load();
+
+preview.play();
+
+title.innerHTML="Template "+btn.dataset.template;
+
+});
+
+});
