@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Decavisual</title>
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Motion (CDN) — pengganti motion/react untuk animasi sudut glow -->
+
+<script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.min.js"></script>
+
+<!-- Lucide Icons (CDN) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="antialiased font-body">
+
+<!-- ================= NAVBAR (liquid glass pill) ================= -->
+<header class="fixed top-4 inset-x-0 z-50 px-4">
+  <nav class="liquid-glass rounded-full max-w-5xl mx-auto px-6 py-3 flex items-center justify-between bg-ink/40">
+    <a href="#home" class="font-display font-700 text-lg tracking-tight">
+     <img
+    src="Img/Decavisual Logo.png"
+    alt="Decavisual Logo"
+    class="h-8 w-auto"
+  />
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+      <li><a class="hover:text-white transition-colors" href="#tentang">Tentang</a></li>
+      <li><a class="hover:text-white transition-colors" href="#proyek">Portfolio</a></li>
+            <li><a class="hover:text-white transition-colors" href="#layanan">Layanan</a></li>
+      <li><a class="hover:text-white transition-colors" href="#testimoni">Testimoni</a></li>
+    </ul>
+    <a href="#kontak" class="liquid-glass rounded-full px-6 py-2 text-sm font-medium text-white hover:bg-white/5 transition-colors">Hubungi Kami</a>
+  </nav>
+</header>
+
+<!-- Konten utama: z-10 di atas footer reveal -->
+<main id="page-main" class="relative z-10 bg-ink rounded-b-[2.5rem] shadow-[0_60px_120px_rgba(0,0,0,0.8)]">
+
+<!-- ================= 1 · HERO (card rail) ================= -->
+<section id="home" class="relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid"></div>
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[30rem] rounded-full blur-[140px] opacity-20"
+       style="background:conic-gradient(from 90deg,#dd7bbb,#d79f1e,#5a922c,#4c7894,#dd7bbb)"></div>
+
+  <div class="relative max-w-7xl mx-auto pt-36 pb-28 px-6 sm:pt-36 sm:pb-28">
+
+    <!-- Badge (iridescent border) -->
+    <div class="flex justify-center" style="animation: fadeSlideIn 1s ease-out 0s both;">
+<span class="relative inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium text-white tracking-tight"
+      style="padding: 8px 24px; background: linear-gradient(135deg, #1a1a1a, #2d2d2d);">
+  <span class="absolute rounded-full pointer-events-none" aria-hidden="true"
+        style="left:-1px; top:-1px; width:calc(100% + 2px); height:calc(100% + 2px); z-index:-1;
+               background:linear-gradient(90deg,#ff00ff,#00ffff,#ffff00,#ff00ff,#00ffff,#ffff00);
+               background-size:200%; animation: iridescent 8s linear infinite;"></span>
+
+  <span class="absolute rounded-full pointer-events-none" aria-hidden="true"
+        style="left:-1px; top:-1px; width:calc(100% + 2px); height:calc(100% + 2px); z-index:-2;
+               background:linear-gradient(90deg,#ff00ff,#00ffff,#ffff00,#ff00ff,#00ffff,#ffff00);
+               background-size:200%; animation: iridescent 8s linear infinite;
+               filter: blur(20px); opacity: 0.5;"></span>
+
+ <span class="relative z-30 font-mono flex-1 text-center">
+  Template Langsung diterima | Garansi Ganti jika tidak Sesuai
+  <span class="text-red-500 italic">s&k berlaku</span>
+</span>
+</span>
+    </div>
+
+    <!-- Headline -->
+    <div class="mx-auto max-w-3xl text-center mt-8" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+      <h1 class="font-display font-semibold tracking-tighter leading-[1.06] text-4xl sm:text-6xl lg:text-7xl">
+        Order  Template 
+        <span class="serif-accent block bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent">Kapan saja (24 Jam)</span>
+      </h1>
+    </div>
+
+    <!-- Card rail -->
+    <div class="relative max-w-5xl mx-auto mt-12" style="animation: fadeSlideIn 1s ease-out 0.3s both;">
+
+      <!-- creator tag left -->
+      <div class="absolute -top-5 left-[12%] sm:-top-7 sm:left-[16%] z-50">
+        <div class="relative">
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-white bg-pink rounded-full py-1.5 px-3.5 shadow-md">
+            Powerpoint <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </span>
+          <span class="absolute -bottom-1 left-6 h-2 w-2 rotate-45 bg-pink"></span>
+        </div>
+      </div>
+
+      <!-- creator tag right -->
+      <div class="absolute -top-4 right-[10%] sm:-top-6 sm:right-[14%] z-50">
+        <div class="relative">
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-white bg-sea rounded-full py-1.5 px-3.5 shadow-md">
+            Canva <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </span>
+          <span class="absolute -bottom-1 left-6 h-2 w-2 rotate-45 bg-sea"></span>
+        </div>
+      </div>
+
+<!-- Cards -->
+<div class="flex justify-center px-4">
+  <div class="flex items-end">
+
+    <!-- Card 1 -->
+    <div class="card-item rotate-[-10deg] z-10 transition-all duration-500 hover:scale-110 hover:z-50">
+      <div class="liquid-glass w-24 h-44 rounded-2xl overflow-hidden shadow-lg">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="Video/V1.MP4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-item -ml-8 rotate-[6deg] z-20 transition-all duration-500 hover:scale-110 hover:z-50">
+      <div class="liquid-glass w-24 h-44 rounded-2xl overflow-hidden shadow-lg">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="Video/V5.MP4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-item -ml-8 rotate-[-4deg] z-30 transition-all duration-500 hover:scale-110 hover:z-50">
+      <div class="liquid-glass w-24 h-44 rounded-2xl overflow-hidden shadow-lg">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="Video/V7.MP4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card-item -ml-8 rotate-[10deg] z-40 transition-all duration-500 hover:scale-110 hover:z-50">
+      <div class="liquid-glass w-24 h-44 rounded-2xl overflow-hidden shadow-lg">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="Video/V8.MP4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Subcopy -->
+    <p class="mx-auto mt-8 max-w-xl text-center text-base text-soft" style="animation: fadeSlideIn 1s ease-out 0.5s both;"><span class="text-white font-medium">Decavisual</span> — creative presentation agency
+  yang membantu mahasiswa, profesional, dan perusahaan menghadirkan presentasi yang profesional, modern, dan berkesan.
+    </p>
+
+    <!-- CTAs -->
+    <div class="mt-8 flex items-center justify-center gap-4" style="animation: fadeSlideIn 1s ease-out 0.7s both;">
+      <a href="#universitas" class="group relative inline-flex h-11 items-center justify-center rounded-full px-6 text-base font-semibold text-white/95 outline outline-1 outline-white/10 hover:outline-white/20 transition-all duration-500 hover:-translate-y-0.5">
+        <span class="absolute -inset-px overflow-hidden rounded-full" aria-hidden="true">
+          <span class="absolute inset-0 rounded-full" style="background:linear-gradient(140deg,rgba(15,15,17,1) 0%,rgba(30,30,33,1) 35%,rgba(45,45,50,1) 70%,rgba(20,20,22,1) 100%);"></span>
+          <span class="absolute -top-[52px] right-1 h-20 w-20 bg-pink opacity-20 mix-blend-lighten blur-[35px] rounded-full"></span>
+          <span class="absolute -bottom-[42px] -left-[19px] h-20 w-20 bg-sea opacity-15 mix-blend-lighten blur-[40px] rounded-full"></span>
+          <span class="absolute inset-0 overflow-hidden rounded-full">
+            <span class="absolute -left-1/2 top-0 h-full w-1/2 bg-white/15 opacity-0 skew-x-12 blur-sm transition-all duration-700 group-hover:opacity-30 group-hover:translate-x-[220%] rounded-full"></span>
+          </span>
+          <span class="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-full"></span>
+        </span>
+        <span class="relative z-10">Lihat Template</span>
+      </a>
+      <a href="#layanan" class="liquid-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors">
+        Layanan <i data-lucide="external-link" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+
+    <!-- all Client -->
+  <div class="relative border-t border-line/60 py-5 overflow-hidden">
+    <div class="marquee" aria-label="Tech stack">
+      <div class="marquee-group">
+        <span class="logo-item" title="Logo"><img src="Logo/1675312406725.png" alt="Logo" loading="lazy" Width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/BNI-01.png" alt="Logo" loading="lazy" Width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/Danantara_Indonesia_Logo_vector-White-1.png" alt="Logo" loading="lazy" Width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/gery-ISI-LOGO-1007x1024.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/images-2-2.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/lambang-its-white-std.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/ITB.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/Logo BCA_Putih.png" alt="Logo" loading="lazy" width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/Logo-indofood.svg_-2.png" alt="Logo" loading="lazy" width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/logo-white-Di3YB2Jb.png" alt="Logo" loading="lazy" Width="50" height="50"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/Logo_of_Universitas_Negeri_Semarang.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/png-transparent-airlangga-university-university-of-indonesia-logo-bandung-institute-of-technology-others-miscellaneous-logo-monochrome-2.png" alt="Logo" loading="lazy" Width="40" height="40"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/TEL-U.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/UI.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/undip.png" alt="Logo" loading="lazy" width="26" height="26"></span>
+        <span class="logo-item" title="Logo"><img src="Logo/UNS.png" alt="Logo" loading="lazy" width="26" height="26"></span>  
+    </div>
+          <div class="marquee-group">
+   
+      </span><span class="logo-item" title="LPS"><img src="Img/LPS.png" alt="LPS" loading="lazy" width="26" height="26"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · TENTANG (panel bernomor + stat cards) ================= -->
+<section id="tentang" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 sm:py-24">
+  <div class="rounded-3xl px-0 py-0 sm:p-0 reveal">
+
+    <div class="mb-12 relative">
+      <div class="gap-x-6 gap-y-6 items-start">
+
+
+        <!-- Title + Subtitle -->
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[0.95] text-zinc-100 tracking-tighter font-semibold">
+            Setiap slide
+            <span class="serif-accent bg-clip-text text-transparent bg-gradient-to-r from-pink to-sea">dirancang</span>
+            untuk
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-zinc-400 max-w-2xl">
+            membantu Anda tampil lebih percaya diri di depan audiens.
+          </p>
+        </div>
+        
+    <!-- Panel dalam: stat cards -->
+    <div class="relative mt-8 sm:mt-8">
+      <div>
+        <div class="lg:grid-cols-3 gap-4 sm:gap-5">
+
+          <!-- Card 1 -->
+          <article class="liquid-glass rounded-2xl bg-panel/40 p-6 sm:p-8 flex flex-col justify-between">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-display text-5xl sm:text-6xl leading-none tracking-tighter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink to-gold">2500+</span>
+            </div>
+            <p class="text-neutral-300 text-base leading-relaxed">Klien telah mempercayakan kami, mulai dari CEO, manajer, staf, mahasiswa, hingga berbagai instansi dan perusahaan besar, baik di dalam negeri maupun luar negeri, untuk merancang dan membuat presentasi yang profesional dan berkualitas.</p>
+            <div class="mt-6">
+              <p class="text-xs text-neutral-500 font-mono uppercase tracking-widest">Pengalaman</p>
+              <p class="text-sm text-neutral-300 mt-1">Sejak 2019</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+        <!-- CTA: tombol animasi text-swap -->
+        <div class="mt-2 lg:mt-8 lg:col-span-3 lg:justify-end flex flex-col sm:flex-row gap-2 sm:items-center">
+          <a href="#proyek" class="group inline-flex min-w-[180px] cursor-pointer overflow-hidden transition-all duration-[1000ms] ease-[cubic-bezier(0.15,0.83,0.66,1)] hover:-translate-y-[3px] hover:text-white text-base font-medium text-neutral-300 tracking-tight bg-white/5 h-[48px] border border-white/15 rounded-full py-3 px-6 relative items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40">
+            <span class="relative z-10 transition-all duration-500 ease-out group-hover:translate-y-8 group-hover:opacity-0 group-hover:blur-md">Lihat karya</span>
+            <span class="z-10 flex items-center justify-center transition-all duration-300 ease-in-out transform -translate-y-8 group-hover:translate-y-0 group-hover:opacity-100 group-hover:blur-none font-medium opacity-0 absolute inset-0">Lihat karya</span>
+            <span aria-hidden="true" class="absolute bottom-0 left-1/2 h-[1px] w-[70%] -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-white/70 to-transparent transition-all duration-[1000ms] opacity-70 blur-[2px]"></span>
+            <span aria-hidden="true" class="absolute inset-0 rounded-full pointer-events-none bg-gradient-to-t from-white/15 via-white/10 to-transparent"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ============ 3· MENGAPA DECAVISUAL ============ -->
+<section id="cara-kerja" class="py-28 border-t border-line/60">
+  <div class="mx-auto max-w-7xl px-5">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-pink mb-3 reveal text-center">Mengapa Decavisual</p>
+    <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 reveal text-center">Alasan klien memilih Decavisual.</h2>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 mt-10 reveal">
+    <div id="work-rows" class="space-y-4 overflow-hidden">
+
+      <!-- Row 1 -->
+      <div class="work-row flex gap-4 md:w-[115%] md:-ml-[7.5%] will-change-transform" data-dir="1">
+
+        <!-- Card 1 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="presentation" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Desain Presentasi Premium</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Setiap slide dirancang dengan visual modern, profesional, dan mampu memperkuat pesan yang ingin Anda sampaikan.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="sparkles" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">100% Sesuai Kebutuhan</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Setiap proyek dibuat khusus mengikuti tujuan, identitas brand, dan kebutuhan presentasi Anda.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="badge-dollar-sign" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Harga Transparan</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Estimasi biaya dijelaskan sejak awal tanpa biaya tambahan, sehingga Anda dapat bekerja dengan tenang.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="clock-3" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Pengerjaan Tepat Waktu</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Kami menjaga kualitas sekaligus memastikan setiap proyek selesai sesuai jadwal yang disepakati.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Row 2 -->
+      <div class="work-row flex gap-4 md:w-[115%] md:-ml-[7.5%] will-change-transform" data-dir="-1">
+
+        <!-- Card 5 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="users" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Kolaborasi yang Mudah</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Komunikasi yang jelas membuat setiap revisi berjalan cepat dan hasil sesuai harapan Anda.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="message-circle-more" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Respon Cepat</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Tim kami siap membantu selama proses pengerjaan hingga proyek selesai dengan pelayanan yang responsif.
+          </p>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="refresh-cw" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Revisi Fleksibel</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Kami memberikan kesempatan revisi agar hasil akhir benar-benar sesuai dengan kebutuhan Anda.
+          </p>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="feature liquid-glass rounded-2xl bg-panel/30 flex flex-col py-10 relative group/feature shrink-0 w-[17rem] md:w-auto md:flex-1 md:min-w-0">
+          <div class="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-panel to-transparent pointer-events-none"></div>
+          <div class="mb-4 relative z-10 px-10 text-soft"><i data-lucide="award" class="h-6 w-6"></i></div>
+          <div class="text-lg font-bold mb-2 relative z-10 px-10">
+            <div class="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-line group-hover/feature:bg-pink transition-all duration-200 origin-center"></div>
+            <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white font-display">Dipercaya 2.500+ Klien</span>
+          </div>
+          <p class="text-sm text-soft max-w-xs relative z-10 px-10">
+            Mulai dari mahasiswa, profesional, UMKM, hingga perusahaan telah mempercayakan kebutuhan presentasi mereka kepada Decavisual.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= 4 · Portfolio (bento + glowing effect) ================= -->
+<section id="proyek" class="mx-auto max-w-6xl px-5 py-28 border-t border-line/60">
+  <p class="font-mono text-xs uppercase tracking-[0.3em] text-leaf mb-3 reveal">Portfolio</p>
+  <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-14 reveal">Karya yang kami banggakan.</h2>
+
+ <ul class="grid grid-cols-1 gap-4 md:grid-cols-3">
+
+  <!-- Portfolio 1 -->
+  <li class="min-h-[14rem] list-none reveal">
+    <div class="glow-capture liquid-glass relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3 bg-panel/20">
+      <div class="glowing-effect" data-glow><div class="glow"></div></div>
+
+      <div class="relative flex h-full flex-col overflow-hidden rounded-xl border-[0.75px] border-line bg-panel">
+        <img src="Img/Mockup PPT Tani.jpg"
+          alt="Presentasi Strategi Bisnis"
+          loading="lazy"
+          class="h-48 w-full object-cover">
+
+        <div class="p-5">
+          <h3 class="font-display text-lg md:text-xl font-semibold tracking-[-0.04em]">
+            Presentasi Strategi Bisnis
+          </h3>
+          <p class="mt-1 text-sm text-soft">
+            PPT profesional dengan visual modern dan data yang mudah dipahami.
+          </p>
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <!-- Portfolio 2 -->
+  <li class="min-h-[14rem] list-none reveal">
+    <div class="glow-capture liquid-glass relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3 bg-panel/20">
+      <div class="glowing-effect" data-glow><div class="glow"></div></div>
+
+      <div class="relative flex h-full flex-col overflow-hidden rounded-xl border-[0.75px] border-line bg-panel">
+        <img src="Img/BNI.jpg"
+          alt="Presentasi Akademik"
+          loading="lazy"
+          class="h-48 w-full object-cover">
+
+        <div class="p-5">
+          <h3 class="font-display text-lg md:text-xl font-semibold tracking-[-0.04em]">
+            Corporate Presentation
+          </h3>
+          <p class="mt-1 text-sm text-soft">
+            Desain modern untuk meeting, proposal, dan presentasi bisnis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <!-- Portfolio 3 -->
+  <li class="min-h-[14rem] list-none reveal">
+    <div class="glow-capture liquid-glass relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3 bg-panel/20">
+      <div class="glowing-effect" data-glow><div class="glow"></div></div>
+
+      <div class="relative flex h-full flex-col overflow-hidden rounded-xl border-[0.75px] border-line bg-panel">
+        <img src="Img/V5 Unair.jpg"
+          alt="Company Profile"
+          loading="lazy"
+          class="h-48 w-full object-cover">
+
+        <div class="p-5">
+          <h3 class="font-display text-lg md:text-xl font-semibold tracking-[-0.04em]">
+            Presentasi Akademik
+          </h3>
+          <p class="mt-1 text-sm text-soft">
+           Fokus pada keterbacaan dan visual yang elegan
+          </p>
+        </div>
+      </div>
+    </div>
+  </li>
+
+</ul>
+</section>
+<!-- ===================== 5. Template List ===================== -->
+<section id="universitas" class="py-28 border-t border-line/60">
+
+    <div class="mx-auto max-w-7xl px-5">
+
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-pink text-center mb-3 reveal">
+            Template PowerPoint & Canva Siap Pakai
+        </p>
+
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-center reveal">
+             Cari Template Sesuai Universitas kamu
+        </h2>
+
+        <p class="mx-auto mt-5 max-w-3xl text-center text-soft reveal">
+            Tersedia berbagai template PowerPoint & Canva dengan identitas visual universitas yang siap digunakan.
+</p>
+        </p>
+
+        <!-- SEARCH -->
+        <div class="mt-10 max-w-xl mx-auto reveal">
+
+            <div class="liquid-glass rounded-2xl flex items-center px-5">
+
+                <i data-lucide="search" class="w-5 h-5 text-soft mr-3"></i>
+
+                <input
+                    id="campusSearch"
+                    type="text"
+                    placeholder="Cari universitas..."
+                    class="bg-transparent w-full py-4 outline-none text-white placeholder:text-soft">
+
+            </div>
+
+        </div>
+
+        <!-- LIST KAMPUS -->
+        <div class="mt-10 liquid-glass rounded-3xl overflow-hidden reveal">
+
+            <div
+                id="campusTable"
+                class="divide-y divide-white/10">
+
+                <!-- Diisi otomatis dari kampus.js -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- JavaScript -->
+<script src="kampus.js"></script>
+<!-- Data Base Template -->
+<script src="script.js"></script>
+
+<!-- ===================== MODAL ===================== -->
+<div
+    id="campusModal"
+    class="fixed inset-0 hidden items-center justify-center bg-black/40 backdrop-blur-md z-[999] px-5 transition-all duration-300">
+
+    <div
+        class="liquid-glass relative w-full max-w-md rounded-[30px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 shadow-2xl">
+
+        <!-- Icon -->
+        <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-pink/15 border border-pink/20">
+            <i data-lucide="search-x" class="w-8 h-8 text-pink"></i>
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-display text-2xl font-bold text-center text-white">
+            Universitas Belum Tersedia
+        </h3>
+
+        <!-- Description -->
+        <p class="mt-3 text-center text-soft leading-relaxed">
+            Universitas yang Anda cari belum tersedia pada koleksi kami.
+            <br>
+            Anda dapat request template sesuai universitas yang diinginkan.
+        </p>
+
+        <!-- Button -->
+        <div class="mt-8 flex flex-col gap-3">
+
+            <a
+                href="https://wa.me/6287884240665?text=Halo%20Admin%20Decavisual,%20saya%20mau%20request%20template%20PPT."
+                target="_blank"
+                class="rounded-2xl bg-pink py-3.5 text-center font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-pink/20">
+
+                Request Template
+
+            </a>
+
+            <button
+                id="closeModal"
+                class="rounded-2xl border border-white/10 bg-white/5 py-3.5 text-white transition-all duration-300 hover:bg-white/10">
+
+                Tutup
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= LAYANAN ================= -->
+<section id="layanan" class="py-28 border-t border-line/60">
+
+    <div class="mx-auto max-w-7xl px-5">
+
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-pink text-center mb-3 reveal">
+            Layanan Decavisual
+        </p>
+
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-center reveal">
+            Pilih Layanan Sesuai Kebutuhan Anda
+        </h2>
+
+        <p class="mx-auto mt-5 max-w-3xl text-center text-soft reveal">
+            Mulai dari template siap pakai hingga presentasi profesional yang dikerjakan langsung oleh tim Decavisual.
+        </p>
+
+        <div class="grid gap-8 mt-16 lg:grid-cols-3">
+
+            <!-- ================= REQUEST TEMPLATE ================= -->
+
+            <div class="relative overflow-hidden rounded-[32px] liquid-glass border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] reveal">
+
+                <div class="flex items-center justify-between">
+
+                    <div class="w-16 h-16 rounded-2xl liquid-glass flex items-center justify-center">
+                        <i data-lucide="layout-template" class="w-8 h-8 text-white"></i>
+                    </div>
+
+                    <span class="text-xs px-3 py-1 rounded-full liquid-glass">
+                        Basic
+                    </span>
+
+                </div>
+
+                <h3 class="text-3xl font-bold mt-8">
+                    Request Template PPT
+                </h3>
+
+                <p class="text-soft mt-3">
+                    Cocok untuk Anda yang ingin menggunakan template profesional dengan harga terjangkau.
+                </p>
+
+                <ul class="mt-8 space-y-4 text-soft">
+
+                    <li>✓ Order melalui WhatsApp Admin</li>
+
+                    <li>✓ Pilih template yang tersedia</li>
+
+                    <li>✓ Logo & background dapat diganti</li>
+
+                    <li>✓ Video tutorial penggunaan</li>
+
+                    <li>✓ Template editable 100%</li>
+
+                </ul>
+
+                <div class="mt-10">
+
+                    <div class="text-sm text-soft">
+                        Mulai dari
+                    </div>
+
+                    <div class="text-5xl font-display font-bold mt-2">
+                        Rp35K
+                    </div>
+
+                </div>
+
+                <button
+    onclick="window.open('https://wa.me/6287884240665?text=Halo%20Admin%20Decavisual,%20saya%20ingin%20request%20Template%20PPT.','_blank')"
+    class="mt-8 w-full liquid-glass rounded-2xl py-4 font-semibold transition hover:bg-white/10">
+
+    Pesan Sekarang
+
+</button>
+
+            </div>
+
+            <!-- ================= JOKI PPT ================= -->
+
+            <div class="relative overflow-hidden rounded-[32px] liquid-glass border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] reveal">
+
+                <div class="flex items-center justify-between">
+
+                    <div class="w-16 h-16 rounded-2xl liquid-glass flex items-center justify-center">
+                        <i data-lucide="monitor-smartphone" class="w-8 h-8 text-white"></i>
+                    </div>
+
+                    <span class="text-xs px-3 py-1 rounded-full liquid-glass">
+                        Popular
+                    </span>
+
+                </div>
+
+                <h3 class="text-3xl font-bold mt-8">
+                    Joki PPT
+                </h3>
+
+                <p class="text-soft mt-3">
+                    Serahkan seluruh proses desain presentasi kepada tim Decavisual hingga siap digunakan.
+                </p>
+
+                <ul class="mt-8 space-y-4 text-soft">
+
+                    <li>✓ Konsultasi dengan Admin</li>
+
+                    <li>✓ Kirim materi PowerPoint</li>
+
+                    <li>✓ Didesain oleh tim profesional</li>
+
+                    <li>✓ Revisi sesuai kebutuhan</li>
+
+                    <li>✓ Siap presentasi</li>
+
+                </ul>
+
+                <div class="mt-10">
+
+                    <div class="text-sm text-soft">
+                        Mulai dari
+                    </div>
+
+                    <div class="text-5xl font-display font-bold mt-2">
+                        Rp80K
+                    </div>
+
+                </div>
+
+                <button
+    onclick="window.open('https://wa.me/6287884240665?text=Halo%20Admin%20Decavisual,%20saya%20ingin%20menggunakan%20layanan%20Joki%20PPT.','_blank')"
+    class="mt-8 w-full liquid-glass rounded-2xl py-4 font-semibold transition hover:bg-white/10">
+
+    Pesan Sekarang
+
+</button>
+
+            </div>
+
+            <!-- ================= COMPANY PROFILE ================= -->
+
+            <div class="relative overflow-hidden rounded-[32px] liquid-glass border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] reveal">
+
+                <div class="flex items-center justify-between">
+
+                    <div class="w-16 h-16 rounded-2xl liquid-glass flex items-center justify-center">
+                        <i data-lucide="briefcase-business" class="w-8 h-8 text-white"></i>
+                    </div>
+
+                    <span class="text-xs px-3 py-1 rounded-full liquid-glass">
+                        Premium
+                    </span>
+
+                </div>
+
+                <h3 class="text-3xl font-bold mt-8">
+                    Company Profile
+                </h3>
+
+                <p class="text-soft mt-3">
+                    Presentasikan perusahaan Anda dengan desain Company Profile yang profesional dan eksklusif.
+                </p>
+
+                <ul class="mt-8 space-y-4 text-soft">
+
+                    <li>✓ Desain sesuai branding</li>
+
+                    <li>✓ Konsultasi langsung</li>
+
+                    <li>✓ Revisi sesuai kebutuhan</li>
+
+                    <li>✓ File editable</li>
+
+                    <li>✓ Siap dipresentasikan</li>
+
+                </ul>
+
+                <div class="mt-10">
+
+                    <div class="text-sm text-soft">
+                        Mulai dari
+                    </div>
+
+                    <div class="text-5xl font-display font-bold mt-2">
+                        Rp300K
+                    </div>
+
+                </div>
+
+                <button
+    onclick="window.open('https://wa.me/6287884240665?text=Halo%20Admin%20Decavisual,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Company%20Profile.','_blank')"
+    class="mt-8 w-full liquid-glass rounded-2xl py-4 font-semibold transition hover:bg-white/10">
+
+    Konsultasi
+
+</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= 6 · TESTIMONI (pinned horizontal velocity scroll) ================= -->
+<section id="testimoni" class="relative border-t border-line/60" style="height:320vh">
+
+    <div class="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+
+        <!-- Heading -->
+        <div class="mx-auto max-w-6xl px-5 w-full mb-10">
+
+            <p class="font-mono text-xs uppercase tracking-[0.3em] text-pink mb-3">
+                Testimoni Klien
+            </p>
+
+            <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight">
+                Apa Kata <span class="serif-accent text-white/60">Klien Decavisual</span>
+            </h2>
+
+            <p class="mt-5 max-w-3xl text-soft">
+                Lebih dari <strong>2.500+</strong> klien telah mempercayakan Decavisual untuk membantu kebutuhan presentasi, mulai dari mahasiswa, dosen, perusahaan, hingga berbagai instansi di Indonesia maupun luar negeri.
+            </p>
+
+            <!-- Statistik -->
+            <div class="flex flex-wrap gap-8 mt-8">
+
+                <div>
+                    <h3 class="text-3xl font-bold">2.500+</h3>
+                    <p class="text-soft text-sm">Project Selesai</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">16K+</h3>
+                    <p class="text-soft text-sm">Followers TikTok</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">1M+</h3>
+                    <p class="text-soft text-sm">Likes TikTok</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Horizontal Card -->
+        <div id="h-track" class="flex gap-6 will-change-transform pl-[6vw] pr-[6vw]">
+
+            <!-- Card 1 -->
+            <figure class="liquid-glass shrink-0 w-[20rem] md:w-[26rem] rounded-3xl p-8 bg-panel/40 flex flex-col justify-between gap-8">
+
+                <blockquote class="text-lg md:text-xl leading-relaxed text-white/90">
+                    "Template PPT-nya sangat premium dan mudah digunakan. Saya tinggal mengganti isi materi tanpa perlu mendesain dari awal."
+                </blockquote>
+
+                <figcaption class="flex items-center gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop"
+                        alt="Sarah"
+                        loading="lazy"
+                        class="h-12 w-12 rounded-full object-cover ring-1 ring-white/10">
+
+                    <div>
+
+                        <p class="font-display font-semibold">
+                            Sarah Putri
+                        </p>
+
+                        <p class="text-sm text-soft">
+                            Mahasiswa Universitas Airlangga
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+            <!-- Card 2 -->
+            <figure class="liquid-glass shrink-0 w-[20rem] md:w-[26rem] rounded-3xl p-8 bg-panel/40 flex flex-col justify-between gap-8">
+
+                <blockquote class="text-lg md:text-xl leading-relaxed text-white/90">
+                    "Admin sangat responsif dan hasil desain presentasinya jauh lebih profesional dibanding ekspektasi saya."
+                </blockquote>
+
+                <figcaption class="flex items-center gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop"
+                        alt="Ahmad"
+                        loading="lazy"
+                        class="h-12 w-12 rounded-full object-cover ring-1 ring-white/10">
+
+                    <div>
+
+                        <p class="font-display font-semibold">
+                            Ahmad Rizki
+                        </p>
+
+                        <p class="text-sm text-soft">
+                            Universitas Brawijaya
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+            <!-- Card 3 -->
+            <figure class="liquid-glass shrink-0 w-[20rem] md:w-[26rem] rounded-3xl p-8 bg-panel/40 flex flex-col justify-between gap-8">
+
+                <blockquote class="text-lg md:text-xl leading-relaxed text-white/90">
+                    "Company Profile yang dibuat Decavisual membuat presentasi perusahaan kami terlihat lebih profesional di depan investor."
+                </blockquote>
+
+                <figcaption class="flex items-center gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop"
+                        alt="Rina"
+                        loading="lazy"
+                        class="h-12 w-12 rounded-full object-cover ring-1 ring-white/10">
+
+                    <div>
+
+                        <p class="font-display font-semibold">
+                            Rina Amelia
+                        </p>
+
+                        <p class="text-sm text-soft">
+                            CEO Startup
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+            <!-- Card 4 -->
+            <figure class="liquid-glass shrink-0 w-[20rem] md:w-[26rem] rounded-3xl p-8 bg-panel/40 flex flex-col justify-between gap-8">
+
+                <blockquote class="text-lg md:text-xl leading-relaxed text-white/90">
+                    "Sudah beberapa kali menggunakan Joki PPT Decavisual dan hasilnya selalu rapi, modern, serta selesai tepat waktu."
+                </blockquote>
+
+                <figcaption class="flex items-center gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&auto=format&fit=crop"
+                        alt="Dimas"
+                        loading="lazy"
+                        class="h-12 w-12 rounded-full object-cover ring-1 ring-white/10">
+
+                    <div>
+
+                        <p class="font-display font-semibold">
+                            Dimas Pratama
+                        </p>
+
+                        <p class="text-sm text-soft">
+                            Karyawan Swasta
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+            <!-- Card 5 -->
+            <figure class="liquid-glass shrink-0 w-[20rem] md:w-[26rem] rounded-3xl p-8 bg-panel/40 flex flex-col justify-between gap-8">
+
+                <blockquote class="text-lg md:text-xl leading-relaxed text-white/90">
+                    "Desain presentasinya elegan, komunikatif, dan membuat audiens lebih fokus pada materi yang saya sampaikan."
+                </blockquote>
+
+                <figcaption class="flex items-center gap-4">
+
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80&auto=format&fit=crop"
+                        alt="Fajar"
+                        loading="lazy"
+                        class="h-12 w-12 rounded-full object-cover ring-1 ring-white/10">
+
+                    <div>
+
+                        <p class="font-display font-semibold">
+                            Fajar Nugroho
+                        </p>
+
+                        <p class="text-sm text-soft">
+                            Business Development Manager
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= 7 · KONTAK ================= -->
+<section id="kontak" class="border-t border-line/60">
+
+  <div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
+
+    <div class="flex flex-col items-center text-center reveal">
+
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-pink mb-4">
+        Kontak
+      </p>
+
+      <h2 class="font-display font-bold tracking-tight leading-tight text-[clamp(2rem,5vw,4rem)]">
+        Ceritakan <span class="serif-accent text-white/60">ide kamu</span>,<br>
+        kami yang eksekusi.
+      </h2>
+
+      <ul class="mt-10 space-y-6 w-full max-w-lg">
+
+        <li class="flex items-center gap-4 text-soft">
+
+          <span class="liquid-glass rounded-full p-3 inline-flex text-white/80 shrink-0">
+            <i data-lucide="mail" class="h-5 w-5"></i>
+          </span>
+
+          <div class="text-left">
+
+            <p class="text-white font-medium">
+              admin@decavisual.co.id
+            </p>
+
+            <p class="text-sm">
+              Balasan &lt; 24 jam
+            </p>
+
+          </div>
+
+        </li>
+
+        <li class="flex items-center gap-4 text-soft">
+
+          <span class="liquid-glass rounded-full p-3 inline-flex text-white/80 shrink-0">
+            <i data-lucide="map-pin" class="h-5 w-5"></i>
+          </span>
+
+          <div class="text-left">
+
+            <p class="text-white font-medium">
+              Lamongan, Indonesia
+            </p>
+
+            <p class="text-sm">
+              Melayani seluruh Indonesia
+            </p>
+
+          </div>
+
+        </li>
+
+        <li class="flex items-center gap-4 text-soft">
+
+          <span class="liquid-glass rounded-full p-3 inline-flex text-white/80 shrink-0">
+            <i data-lucide="calendar-check" class="h-5 w-5"></i>
+          </span>
+
+          <div class="text-left">
+
+            <p class="text-white font-medium">
+              Slot Tersedia
+            </p>
+
+            <p class="text-sm">
+              Siap menerima project baru
+            </p>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+      <!-- SOCIAL MEDIA -->
+      <div class="mt-10 flex items-center justify-center gap-4">
+
+        <a href="https://wa.me/6287884240665"
+           target="_blank"
+           aria-label="WhatsApp"
+           class="liquid-glass rounded-full p-4 text-white hover:text-white hover:bg-white/5 hover:scale-110 transition-all duration-300 inline-flex">
+
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+
+        </a>
+
+        <a href="https://instagram.com/decavisual_"
+           target="_blank"
+           aria-label="Instagram"
+           class="liquid-glass rounded-full p-4 text-white hover:text-white hover:bg-white/5 hover:scale-110 transition-all duration-300 inline-flex">
+
+          <i class="fa-brands fa-instagram text-xl"></i>
+
+        </a>
+
+        <a href="https://tiktok.com/@decavisual_"
+           target="_blank"
+           aria-label="TikTok"
+           class="liquid-glass rounded-full p-4 text-white hover:text-white hover:bg-white/5 hover:scale-110 transition-all duration-300 inline-flex">
+
+          <i class="fa-brands fa-tiktok text-xl"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</main>
+
+<!-- Spacer setinggi footer supaya konten bisa "terangkat" dan footer terlihat -->
+<div id="footer-spacer" class="h-[75vh]" aria-hidden="true"></div>
+
+<!-- ================= FOOTER (overlapping reveal) ================= -->
+<footer id="site-footer" class="fixed bottom-0 inset-x-0 h-[75vh] z-0 flex flex-col justify-end overflow-hidden bg-[#07080c]">
+
+    <div class="absolute inset-0 hero-grid opacity-60"></div>
+
+    <div class="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[70rem] h-[26rem] rounded-full blur-[140px] opacity-15"
+        style="background:conic-gradient(from 90deg,#dd7bbb,#d79f1e,#5a922c,#4c7894,#dd7bbb)">
+    </div>
+
+    <div id="footer-inner"
+        class="relative mx-auto max-w-6xl px-5 w-full pt-20"
+        style="opacity:0; transform:translateY(60px);">
+
+        <div class="grid md:grid-cols-12 gap-10">
+
+            <!-- Brand -->
+            <div class="md:col-span-6">
+
+                <p class="font-mono text-xs uppercase tracking-[0.3em] text-soft mb-4">
+                    Decavisual
+                </p>
+
+                <p class="text-soft max-w-sm">
+                    Decavisual membantu mahasiswa, profesional, perusahaan, dan berbagai instansi menciptakan presentasi yang profesional, modern, dan mampu meninggalkan kesan terbaik di setiap kesempatan.
+                </p>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="md:col-span-3">
+
+                <p class="font-mono text-xs uppercase tracking-[0.3em] text-soft mb-4">
+                    Navigasi
+                </p>
+
+                <ul class="space-y-2 text-soft">
+
+                    <li>
+                        <a href="#home" class="hover:text-white transition-colors">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#layanan" class="hover:text-white transition-colors">
+                            Layanan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#testimoni" class="hover:text-white transition-colors">
+                            Testimoni
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="hover:text-white transition-colors">
+                            Kontak
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="md:col-span-3">
+
+                <p class="font-mono text-xs uppercase tracking-[0.3em] text-soft mb-4">
+                    Hubungi Kami
+                </p>
+
+                <ul class="space-y-2 text-soft">
+
+                    <li>
+                        <a href="https://wa.me/6287884240665"
+                            target="_blank"
+                            class="hover:text-white transition-colors">
+                            WhatsApp
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://instagram.com/decavisual"
+                            target="_blank"
+                            class="hover:text-white transition-colors">
+                            Instagram
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://tiktok.com/@decavisual_"
+                            target="_blank"
+                            class="hover:text-white transition-colors">
+                            TikTok
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:decavisual@gmail.com"
+                            class="hover:text-white transition-colors">
+                            decavmanagement@gmail.com
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="mt-10 flex items-center justify-between text-sm text-soft border-t border-line/40 pt-6">
+
+            <p>
+                © 2026 Decavisual. All Rights Reserved.
+            </p>
+
+            <p class="font-mono">
+                Presentation Design Studio
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Big Text -->
+
+    <h2 id="footer-wordmark"
+        class="relative font-display font-bold tracking-tighter leading-none text-center select-none pointer-events-none
+        text-[clamp(5rem,18vw,16rem)] bg-gradient-to-b from-white/25 to-white/0 bg-clip-text text-transparent -mb-6 md:-mb-10"
+        style="opacity:0; transform:translateY(80px);">
+
+        DECAVISUAL
+
+    </h2>
+
+</footer>
+<script>
+/* =====================================================================
+   GLOWING EFFECT — port vanilla JS dari komponen React glowing-effect.tsx
+   Perilaku identik: sudut gradien mengikuti pointer, zona non-aktif di
+   tengah, animasi sudut memakai Motion (easing [0.16, 1, 0.3, 1]).
+   ===================================================================== */
+(function () {
+  const { animate } = window.Motion;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const items = Array.from(document.querySelectorAll('[data-glow]')).map((el) => ({
+    el,
+    spread: parseFloat(el.dataset.spread || '40'),
+    proximity: parseFloat(el.dataset.proximity || '64'),
+    inactiveZone: parseFloat(el.dataset.inactiveZone || '0.01'),
+    movementDuration: 2,
+    raf: 0,
+    anim: null,
+  }));
+
+  items.forEach((it) => it.el.style.setProperty('--spread', String(it.spread)));
+
+  const last = { x: 0, y: 0 };
+
+  function handleMove(item, e) {
+    if (item.raf) cancelAnimationFrame(item.raf);
+    item.raf = requestAnimationFrame(() => {
+      const element = item.el;
+      const { left, top, width, height } = element.getBoundingClientRect();
+      const mouseX = e ? e.x : last.x;
+      const mouseY = e ? e.y : last.y;
+      if (e) { last.x = mouseX; last.y = mouseY; }
+
+      const center = [left + width * 0.5, top + height * 0.5];
+      const distanceFromCenter = Math.hypot(mouseX - center[0], mouseY - center[1]);
+      const inactiveRadius = 0.5 * Math.min(width, height) * item.inactiveZone;
+
+      if (distanceFromCenter < inactiveRadius) {
+        element.style.setProperty('--active', '0');
+        return;
+      }
+
+      const isActive =
+        mouseX > left - item.proximity &&
+        mouseX < left + width + item.proximity &&
+        mouseY > top - item.proximity &&
+        mouseY < top + height + item.proximity;
+
+      element.style.setProperty('--active', isActive ? '1' : '0');
+      if (!isActive) return;
+
+      const currentAngle = parseFloat(element.style.getPropertyValue('--start')) || 0;
+      const targetAngle = (180 * Math.atan2(mouseY - center[1], mouseX - center[0])) / Math.PI + 90;
+      const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
+      const newAngle = currentAngle + angleDiff;
+
+      if (prefersReduced) {
+        element.style.setProperty('--start', String(newAngle));
+        return;
+      }
+      if (item.anim) item.anim.stop();
+      item.anim = animate(currentAngle, newAngle, {
+        duration: item.movementDuration,
+        ease: [0.16, 1, 0.3, 1],
+        onUpdate: (value) => element.style.setProperty('--start', String(value)),
+      });
+    });
+  }
+
+  document.body.addEventListener('pointermove', (e) => {
+    items.forEach((item) => handleMove(item, e));
+  }, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    items.forEach((item) => handleMove(item));
+  }, { passive: true });
+})();
+
+/* Reveal on scroll */
+(function () {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+})();
+
+/* Hero card rail — klik untuk fokus satu kartu, klik lagi / di luar untuk reset */
+(function () {
+  const container = document.getElementById('card-grid-container');
+  if (!container) return;
+  const cards = container.querySelectorAll('.card-item');
+  let activeCard = null;
+
+  function resetCards() {
+    cards.forEach((c) => {
+      c.style.filter = '';
+      c.style.opacity = '';
+      c.style.transform = '';
+      c.style.zIndex = '';
+    });
+    activeCard = null;
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (activeCard === card) { resetCards(); return; }
+      cards.forEach((c) => {
+        c.style.filter = 'blur(8px)';
+        c.style.opacity = '0.4';
+        c.style.transform = '';
+        c.style.zIndex = '1';
+        c.style.transition = 'all 0.7s ease-out';
+      });
+      card.style.filter = 'blur(0px)';
+      card.style.opacity = '1';
+      card.style.transform = 'translate(0,0) rotate(0deg) scale(1.15)';
+      card.style.zIndex = '10';
+      activeCard = card;
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (activeCard && !container.contains(e.target)) resetCards();
+  });
+})();
+
+/* =====================================================================
+   TESTIMONI — pinned horizontal scroll + velocity skew (versi stabil)
+   - Posisi dihitung dari offsetTop absolut, bukan getBoundingClientRect
+     berulang (lebih konsisten saat resize / lazy image load)
+   - maxShift dihitung ulang tiap frame supaya aman saat gambar termuat
+   - rAF hanya aktif saat section berada di viewport
+   ===================================================================== */
+(function () {
+  const section = document.getElementById('testimoni');
+  const track = document.getElementById('h-track');
+  if (!section || !track) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let sectionTop = 0, sectionHeight = 0;
+  let currentX = 0, skew = 0, lastX = 0;
+  let running = false;
+
+  function measure() {
+    const rect = section.getBoundingClientRect();
+    sectionTop = rect.top + window.scrollY;
+    sectionHeight = section.offsetHeight;
+  }
+
+  function frame() {
+    const vh = window.innerHeight;
+    const total = Math.max(1, sectionHeight - vh);
+    const progress = Math.min(1, Math.max(0, (window.scrollY - sectionTop) / total));
+    const maxShift = Math.max(0, track.scrollWidth - document.documentElement.clientWidth);
+    const targetX = -progress * maxShift;
+
+    if (prefersReduced) {
+      track.style.transform = `translateX(${targetX}px)`;
+    } else {
+      currentX += (targetX - currentX) * 0.1;
+      if (Math.abs(targetX - currentX) < 0.1) currentX = targetX;
+      const velocity = currentX - lastX;
+      lastX = currentX;
+      const targetSkew = Math.max(-5, Math.min(5, velocity * 0.15));
+      skew += (targetSkew - skew) * 0.12;
+      if (Math.abs(skew) < 0.02) skew = 0;
+      track.style.transform = `translateX(${currentX.toFixed(2)}px) skewX(${skew.toFixed(2)}deg)`;
+    }
+
+    // hanya terus animasi jika section masih relevan di viewport
+    const inView = window.scrollY + vh > sectionTop && window.scrollY < sectionTop + sectionHeight;
+    if (inView || Math.abs(skew) > 0.02) {
+      requestAnimationFrame(frame);
+    } else {
+      running = false;
+    }
+  }
+
+  function start() {
+    if (!running) { running = true; requestAnimationFrame(frame); }
+  }
+
+  window.addEventListener('scroll', start, { passive: true });
+  window.addEventListener('resize', () => { measure(); start(); });
+  window.addEventListener('load', () => { measure(); start(); });
+  measure();
+  start();
+})();
+
+/* =====================================================================
+   FOOTER REVEAL — opacity + translateY mengikuti progres scroll
+   Saat spacer mulai terlihat, konten footer memudar masuk (0 → 1)
+   dan naik dari bawah; wordmark raksasa menyusul sedikit lebih lambat.
+   ===================================================================== */
+(function () {
+  const spacer = document.getElementById('footer-spacer');
+  const inner = document.getElementById('footer-inner');
+  const wordmark = document.getElementById('footer-wordmark');
+  if (!spacer || !inner) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking = false;
+
+  function apply() {
+    ticking = false;
+    const rect = spacer.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // progress: 0 saat spacer baru menyentuh bawah viewport, 1 saat spacer penuh terlihat
+    const progress = Math.min(1, Math.max(0, (vh - rect.top) / rect.height));
+    const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+
+    if (prefersReduced) {
+      inner.style.opacity = progress > 0 ? '1' : '0';
+      inner.style.transform = 'none';
+      if (wordmark) { wordmark.style.opacity = progress > 0 ? '1' : '0'; wordmark.style.transform = 'none'; }
+      return;
+    }
+
+    inner.style.opacity = eased.toFixed(3);
+    inner.style.transform = `translateY(${(1 - eased) * 60}px)`;
+    if (wordmark) {
+      const wEased = Math.min(1, Math.max(0, (progress - 0.15) / 0.85));
+      const w = 1 - Math.pow(1 - wEased, 3);
+      wordmark.style.opacity = w.toFixed(3);
+      wordmark.style.transform = `translateY(${(1 - w) * 80}px)`;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  apply();
+})();
+
+/* =====================================================================
+   CARA KERJA — dua baris kartu bergeser berlawanan arah saat scroll
+   Baris 1 → kanan, baris 2 → kiri, mengikuti posisi section di viewport,
+   dengan lerp halus dan hormat pada prefers-reduced-motion.
+   ===================================================================== */
+(function () {
+  const wrap = document.getElementById('work-rows');
+  if (!wrap) return;
+  const rows = Array.from(wrap.querySelectorAll('.work-row'));
+  if (!rows.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return; // biarkan statis
+
+  const state = rows.map(() => ({ current: 0, target: 0 }));
+  let running = false;
+
+  function amplitude() {
+    // buffer aman: baris lebih lebar 15% dari container di desktop
+    return Math.min(90, window.innerWidth * 0.06);
+  }
+
+  function measure() {
+    const rect = wrap.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // progress 0 → 1 selama blok melintasi viewport
+    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+    const t = (progress - 0.5) * 2; // -1 … 1
+    rows.forEach((row, i) => {
+      const dir = parseFloat(row.dataset.dir || '1');
+      state[i].target = t * amplitude() * dir;
+    });
+  }
+
+  function frame() {
+    let active = false;
+    rows.forEach((row, i) => {
+      const s = state[i];
+      s.current += (s.target - s.current) * 0.1;
+      if (Math.abs(s.target - s.current) > 0.1) active = true;
+      row.style.transform = `translateX(${s.current.toFixed(2)}px)`;
+    });
+    if (active) requestAnimationFrame(frame);
+    else running = false;
+  }
+
+  function onScroll() {
+    measure();
+    if (!running) { running = true; requestAnimationFrame(frame); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+
+/* Contact form → buka mailto dengan isi terisi */
+(function () {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nama = document.getElementById('cf-nama').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const pesan = document.getElementById('cf-pesan').value.trim();
+    const subject = encodeURIComponent(`Halo dari ${nama}`);
+    const body = encodeURIComponent(`${pesan}\n\n— ${nama} (${email})`);
+    window.location.href = `mailto:halo@sugi.dev?subject=${subject}&body=${body}`;
+  });
+})();
+
+/* Lucide icons */
+lucide.createIcons();
+</script>
+</body>
+</html>
