@@ -1,8 +1,3 @@
-/*
-====================================================
-Decavisual Wizard
-====================================================
-*/
 
 let currentStep = 1;
 const totalStep = 4;
@@ -11,10 +6,10 @@ const steps = document.querySelectorAll(".wizard-step");
 const progressFill = document.getElementById("progressFill");
 
 const indicators = [
-    document.getElementById("indicator1"),
-    document.getElementById("indicator2"),
-    document.getElementById("indicator3"),
-    document.getElementById("indicator4")
+  document.getElementById("indicator1"),
+  document.getElementById("indicator2"),
+  document.getElementById("indicator3"),
+  document.getElementById("indicator4"),
 ];
 
 /* ==========================================
@@ -22,28 +17,22 @@ SHOW STEP
 ========================================== */
 
 function showStep(step) {
+  steps.forEach((section) => {
+    section.classList.add("hidden");
+    section.classList.remove("active");
+  });
 
-    steps.forEach(section => {
+  const activeStep = document.getElementById(`step${step}`);
 
-        section.classList.add("hidden");
-        section.classList.remove("active");
+  activeStep.classList.remove("hidden");
 
-    });
+  requestAnimationFrame(() => {
+    activeStep.classList.add("active");
+  });
 
-    const activeStep = document.getElementById(`step${step}`);
+  currentStep = step;
 
-    activeStep.classList.remove("hidden");
-
-    requestAnimationFrame(() => {
-
-        activeStep.classList.add("active");
-
-    });
-
-    currentStep = step;
-
-    updateProgress();
-
+  updateProgress();
 }
 
 /* ==========================================
@@ -51,43 +40,29 @@ NEXT
 ========================================== */
 
 function nextStep() {
-
-    // validation.js
-    if (typeof validateStep === "function") {
-
-        if (!validateStep(currentStep)) {
-
-            return;
-
-        }
-
+  // validation.js
+  if (typeof validateStep === "function") {
+    if (!validateStep(currentStep)) {
+      return;
     }
+  }
 
-    // summary.js
-    if (currentStep === 2) {
-
-        if (typeof updateSummary === "function") {
-
-            updateSummary();
-
-        }
-
+  // summary.js
+  if (currentStep === 2) {
+    if (typeof updateSummary === "function") {
+      updateSummary();
     }
+  }
 
-    if (currentStep === 3) {
-
-        if (typeof updateCheckoutSummary === "function") {
-
-            updateCheckoutSummary();
-
-        }
-
+  if (currentStep === 3) {
+    if (typeof updateCheckoutSummary === "function") {
+      updateCheckoutSummary();
     }
+  }
 
-    if (currentStep >= totalStep) return;
+  if (currentStep >= totalStep) return;
 
-    animateStep(currentStep, currentStep + 1);
-
+  animateStep(currentStep, currentStep + 1);
 }
 
 /* ==========================================
@@ -95,11 +70,9 @@ BACK
 ========================================== */
 
 function prevStep() {
+  if (currentStep <= 1) return;
 
-    if (currentStep <= 1) return;
-
-    animateStep(currentStep, currentStep - 1);
-
+  animateStep(currentStep, currentStep - 1);
 }
 
 /* ==========================================
@@ -107,21 +80,17 @@ ANIMATION
 ========================================== */
 
 function animateStep(from, to) {
+  const current = document.getElementById(`step${from}`);
 
-    const current = document.getElementById(`step${from}`);
+  current.classList.remove("active");
+  current.classList.add("fade-out");
 
-    current.classList.remove("active");
-    current.classList.add("fade-out");
+  setTimeout(() => {
+    current.classList.add("hidden");
+    current.classList.remove("fade-out");
 
-    setTimeout(() => {
-
-        current.classList.add("hidden");
-        current.classList.remove("fade-out");
-
-        showStep(to);
-
-    }, 300);
-
+    showStep(to);
+  }, 300);
 }
 
 /* ==========================================
@@ -129,34 +98,21 @@ PROGRESS
 ========================================== */
 
 function updateProgress() {
+  const percent = (currentStep / totalStep) * 100;
 
-    const percent = (currentStep / totalStep) * 100;
+  progressFill.style.width = `${percent}%`;
 
-    progressFill.style.width = `${percent}%`;
+  indicators.forEach((item, index) => {
+    const number = index + 1;
 
-    indicators.forEach((item, index) => {
+    item.classList.remove("active", "completed");
 
-        const number = index + 1;
-
-        item.classList.remove(
-            "active",
-            "completed"
-        );
-
-        if (number < currentStep) {
-
-            item.classList.add("completed");
-
-        }
-
-        else if (number === currentStep) {
-
-            item.classList.add("active");
-
-        }
-
-    });
-
+    if (number < currentStep) {
+      item.classList.add("completed");
+    } else if (number === currentStep) {
+      item.classList.add("active");
+    }
+  });
 }
 
 /* ==========================================
@@ -175,7 +131,5 @@ INIT
 ========================================== */
 
 window.addEventListener("DOMContentLoaded", () => {
-
-    showStep(1);
-
+  showStep(1);
 });

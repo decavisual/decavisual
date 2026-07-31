@@ -1,42 +1,25 @@
-/*
-====================================================
-Decavisual Validation
-====================================================
-*/
-
-// selectedTemplate berasal dari template.js
-// Jangan deklarasikan lagi di sini
-
-/* ==========================================
-UTILITIES
-========================================== */
-
 function showError(inputId, errorId, message) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(errorId);
 
-    const input = document.getElementById(inputId);
-    const error = document.getElementById(errorId);
+  if (!input || !error) return;
 
-    if (!input || !error) return;
+  input.classList.add("border-red-500");
 
-    input.classList.add("border-red-500");
-
-    error.textContent = message;
-    error.classList.remove("hidden");
-
+  error.textContent = message;
+  error.classList.remove("hidden");
 }
 
 function clearError(inputId, errorId) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(errorId);
 
-    const input = document.getElementById(inputId);
-    const error = document.getElementById(errorId);
+  if (!input || !error) return;
 
-    if (!input || !error) return;
+  input.classList.remove("border-red-500");
 
-    input.classList.remove("border-red-500");
-
-    error.textContent = "";
-    error.classList.add("hidden");
-
+  error.textContent = "";
+  error.classList.add("hidden");
 }
 
 /* ==========================================
@@ -44,26 +27,22 @@ VALIDATE STEP
 ========================================== */
 
 function validateStep(step) {
+  switch (step) {
+    case 1:
+      return validateStep1();
 
-    switch (step) {
+    case 2:
+      return validateStep2();
 
-        case 1:
-            return validateStep1();
+    case 3:
+      return true;
 
-        case 2:
-            return validateStep2();
+    case 4:
+      return validateStep4();
 
-        case 3:
-            return true;
-
-        case 4:
-            return validateStep4();
-
-        default:
-            return true;
-
-    }
-
+    default:
+      return true;
+  }
 }
 
 /* ==========================================
@@ -71,55 +50,42 @@ STEP 1
 ========================================== */
 
 function validateStep1() {
+  let valid = true;
 
-    let valid = true;
+  const paket = document.getElementById("paket");
+  const materi = document.getElementById("materi");
+  const nama = document.getElementById("nama");
+  const kampus = document.getElementById("kampus");
 
-    const paket = document.getElementById("paket");
-    const nama = document.getElementById("nama");
-    const kampus = document.getElementById("kampus");
+  clearError("paket", "paketError");
+  clearError("materi", "materiError");
+  clearError("nama", "namaError");
+  clearError("kampus", "kampusError");
 
-    clearError("paket", "paketError");
-    clearError("nama", "namaError");
-    clearError("kampus", "kampusError");
+  if (!paket || paket.value.trim() === "") {
+    showError("paket", "paketError", "Silakan pilih paket.");
 
-    if (!paket || paket.value.trim() === "") {
+    valid = false;
+  }
+  if (!materi || materi.value.trim() === "") {
+    showError("materi", "materiError", "Silakan pilih sudah atau belum");
 
-        showError(
-            "paket",
-            "paketError",
-            "Silakan pilih paket."
-        );
+    valid = false;
+  }
 
-        valid = false;
+  if (!nama || nama.value.trim() === "") {
+    showError("nama", "namaError", "Nama customer wajib diisi.");
 
-    }
+    valid = false;
+  }
 
-    if (!nama || nama.value.trim() === "") {
+  if (!kampus || kampus.value.trim() === "") {
+    showError("kampus", "kampusError", "Kampus / Company wajib diisi.");
 
-        showError(
-            "nama",
-            "namaError",
-            "Nama customer wajib diisi."
-        );
+    valid = false;
+  }
 
-        valid = false;
-
-    }
-
-    if (!kampus || kampus.value.trim() === "") {
-
-        showError(
-            "kampus",
-            "kampusError",
-            "Kampus / Company wajib diisi."
-        );
-
-        valid = false;
-
-    }
-
-    return valid;
-
+  return valid;
 }
 
 /* ==========================================
@@ -127,30 +93,24 @@ STEP 2
 ========================================== */
 
 function validateStep2() {
+  const error = document.getElementById("templateError");
 
-    const error = document.getElementById("templateError");
+  if (selectedTemplate) {
+    if (error) error.classList.add("hidden");
 
-    if (selectedTemplate) {
+    return true;
+  }
 
-        if (error) error.classList.add("hidden");
+  if (error) {
+    error.classList.remove("hidden");
 
-        return true;
+    error.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }
 
-    }
-
-    if (error) {
-
-        error.classList.remove("hidden");
-
-        error.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-    }
-
-    return false;
-
+  return false;
 }
 
 /* ==========================================
@@ -158,13 +118,11 @@ STEP 4
 ========================================== */
 
 function validateStep4() {
+  const agree = document.getElementById("agreeTerms");
 
-    const agree = document.getElementById("agreeTerms");
+  if (!agree) return false;
 
-    if (!agree) return false;
-
-    return agree.checked;
-
+  return agree.checked;
 }
 
 /* ==========================================
@@ -172,69 +130,78 @@ REALTIME CLEAR ERROR
 ========================================== */
 
 const validationFields = [
+  {
+    input: "paket",
+    error: "paketError",
+  },
+  {
+    input: "materi",
+    error: "materiError",
+  },
 
-    {
-        input: "paket",
-        error: "paketError"
-    },
+  {
+    input: "nama",
+    error: "namaError",
+  },
 
-    {
-        input: "nama",
-        error: "namaError"
-    },
-
-    {
-        input: "kampus",
-        error: "kampusError"
-    }
-
+  {
+    input: "kampus",
+    error: "kampusError",
+  },
 ];
 
-validationFields.forEach(field => {
+validationFields.forEach((field) => {
+  const element = document.getElementById(field.input);
 
-    const element = document.getElementById(field.input);
+  if (!element) return;
 
-    if (!element) return;
+  const handler = () => {
+    clearError(field.input, field.error);
+  };
 
-    const handler = () => {
-
-        clearError(field.input, field.error);
-
-    };
-
-    element.addEventListener("input", handler);
-    element.addEventListener("change", handler);
-
+  element.addEventListener("input", handler);
+  element.addEventListener("change", handler);
 });
 
 /* ==========================================
-CHECKBOX STEP 4
+CHECKBOX Template
 ========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const agree = document.getElementById("agreeTerms");
+  const checkout = document.getElementById("checkoutBtn");
 
-    const agree = document.getElementById("agreeTerms");
-    const checkout = document.getElementById("checkoutBtn");
+  if (!agree || !checkout) return;
 
-    if (!agree || !checkout) return;
+  checkout.disabled = true;
+  checkout.classList.add("opacity-50", "cursor-not-allowed");
 
-    checkout.disabled = true;
-    checkout.classList.add("opacity-50", "cursor-not-allowed");
+  agree.addEventListener("change", () => {
+    checkout.disabled = !agree.checked;
 
-    agree.addEventListener("change", () => {
+    checkout.classList.toggle("opacity-50", !agree.checked);
 
-        checkout.disabled = !agree.checked;
+    checkout.classList.toggle("cursor-not-allowed", !agree.checked);
+  });
+});
+/* ==========================================
+CHECKBOX Joki
+========================================== */
 
-        checkout.classList.toggle(
-            "opacity-50",
-            !agree.checked
-        );
+document.addEventListener("DOMContentLoaded", () => {
+  const agree = document.getElementById("agreeTerms");
+  const checkoutjoki = document.getElementById("checkoutBtnJoki");
 
-        checkout.classList.toggle(
-            "cursor-not-allowed",
-            !agree.checked
-        );
+  if (!agree || !checkoutjoki) return;
 
-    });
+  checkoutjoki.disabled = true;
+  checkoutjoki.classList.add("opacity-50", "cursor-not-allowed");
 
+  agree.addEventListener("change", () => {
+    checkoutjoki.disabled = !agree.checked;
+
+    checkoutjoki.classList.toggle("opacity-50", !agree.checked);
+
+    checkoutjoki.classList.toggle("cursor-not-allowed", !agree.checked);
+  });
 });

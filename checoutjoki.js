@@ -1,10 +1,11 @@
-const checkoutBtn = document.getElementById("checkoutBtn");
+const checkoutBtnJoki = document.getElementById("checkoutBtnJoki");
 
-if (checkoutBtn) {
-  checkoutBtn.addEventListener("click", () => {
+if (checkoutBtnJoki) {
+  checkoutBtnJoki.addEventListener("click", () => {
     const nama = document.getElementById("nama").value;
     const kampus = document.getElementById("kampus").value;
     const paket = document.getElementById("paket").value;
+    const materi = document.getElementById("materi").value;
     const produk = document.getElementById("produk").value;
     const catatan = document.getElementById("catatan").value;
 
@@ -12,15 +13,15 @@ if (checkoutBtn) {
 
     const pesan = `Halo Kak admin Decavisual
 
-Saya ingin melakukan pemesanan template.
+Saya ingin melakukan pemesanan Joki PPT.
 
 Nama : ${nama}
 Kampus / Company : ${kampus}
 Paket : ${paket}
 Produk : ${produk}
+Materi : ${materi}
 Template : ${template}
 Catatan : ${catatan || "-"}
-
 
 tolong kirim nomor rekening agar segera saya payement ya kak.`;
 
